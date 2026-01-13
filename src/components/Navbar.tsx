@@ -14,16 +14,16 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-card/70 backdrop-blur-xl border-b border-border/50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg hero-gradient">
-              <GraduationCap className="w-6 h-6 text-primary-foreground" />
+            <div className="flex items-center justify-center w-10 h-10 rounded-xl gradient-primary animate-gradient shadow-lg">
+              <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold text-foreground leading-tight">Smart Campus</span>
+              <span className="font-bold text-foreground leading-tight">Smart Campus</span>
               <span className="text-xs text-muted-foreground">SKNCOE, Pune</span>
             </div>
           </div>
@@ -34,19 +34,23 @@ export function Navbar() {
               <a
                 key={item.label}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
+                className="relative px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg group"
               >
                 {item.label}
+                <span className="absolute bottom-1 left-4 right-4 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform rounded-full" />
               </a>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm" className="text-muted-foreground">
+            <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
               Sign In
             </Button>
-            <Button size="sm" className="hero-gradient text-primary-foreground hover:opacity-90 transition-opacity">
+            <Button 
+              size="sm" 
+              className="gradient-primary animate-gradient text-white hover:opacity-90 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+            >
               Get Started
             </Button>
           </div>
@@ -62,7 +66,7 @@ export function Navbar() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
+          <div className="md:hidden py-4 border-t border-border animate-fade-up">
             <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <a
@@ -76,7 +80,7 @@ export function Navbar() {
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
                 <Button variant="outline" className="w-full">Sign In</Button>
-                <Button className="w-full hero-gradient text-primary-foreground">Get Started</Button>
+                <Button className="w-full gradient-primary animate-gradient text-white">Get Started</Button>
               </div>
             </div>
           </div>

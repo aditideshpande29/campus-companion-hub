@@ -48,13 +48,20 @@ const services = [
 
 export function ServicesGrid() {
   return (
-    <section id="services" className="py-16 md:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Everything You Need
+    <section id="services" className="py-20 md:py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-16">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            Services
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            Everything You{' '}
+            <span className="gradient-text">Need</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Access all essential student resources in one place. Click on any card to explore detailed information.
           </p>
         </div>

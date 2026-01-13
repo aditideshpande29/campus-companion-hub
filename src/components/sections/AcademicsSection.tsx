@@ -29,18 +29,19 @@ export function AcademicsSection() {
       {years.map((item, index) => (
         <div 
           key={item.year} 
-          className="p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors animate-fade-in"
-          style={{ animationDelay: `${index * 0.1}s` }}
+          className="p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-all duration-300 hover:scale-[1.02] cursor-pointer group"
         >
           <div className="flex items-center gap-3 mb-3">
-            <item.icon className="w-4 h-4 text-accent" />
+            <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+              <item.icon className="w-4 h-4" />
+            </div>
             <h4 className="font-medium text-foreground">{item.year}</h4>
           </div>
           <div className="flex flex-wrap gap-2">
             {item.subjects.map((subject) => (
               <span 
                 key={subject} 
-                className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
+                className="px-3 py-1.5 text-xs font-medium rounded-full bg-card border border-border/50 text-foreground hover:border-primary/30 hover:bg-primary/5 transition-colors"
               >
                 {subject}
               </span>
